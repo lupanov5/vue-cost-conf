@@ -12,13 +12,16 @@ const AreaMarkup = Vue.component('AreaMarkup', {
             charge_value: ''
         }
     },
-    props: ['markup', 'base'],
+    props: ['markup'],
     methods: {
         removeMarkup() {
             this.$emit('remove', this.markup)
         },
         addChargeValue() {
-            this.$emit('chargeValue', this.total)
+            this.$emit('chargeValue', {
+                val: this.charge_value,
+                id: this.markup.id
+            })
         }
     },
     computed: {

@@ -11,7 +11,9 @@ const RareArea = Vue.component('RareArea', {
             markupList: [],
             id: 0,
             baseCharge: '',
-            prevValue: ''
+            prevValue: '',
+            chargeValue: [],
+            valid: true
         }
     },
     components: {
@@ -31,13 +33,28 @@ const RareArea = Vue.component('RareArea', {
         removeMarkup(markup) {
             this.markupList = this.markupList.filter(el => el.id !== markup.id)
         },
-        addPrevValue(val) {
-            this.prevValue = val
+        addChargeValue(value) {
+            this.chargeValue.push(value)
+            this.chargeValue.forEach(el => {
+                if (el.id === value.id) {
+                    el.val = value.val
+                    //this.chargeValue.pop()
+                }
+            })
+
+            console.log(this.setChargeValue)
         }
     },
     computed: {
         base() {
             return Number(this.baseCharge)
+        },
+        setChargeValue() {
+            let sum = 0
+            this.chargeValue.forEach(el => {
+                sum += Number(el.val)
+            })
+            return sum
         }
     },
     template: `<div>
@@ -59,6 +76,9 @@ const RareArea = Vue.component('RareArea', {
                             placeholder="0,00"
                             name="base_charge_value"
                             class="nx-form-element rate__input">
+                            <template v-if="!valid">
+                                <div class="status">Укажите базовую стоимость</div>
+                            </template>
                         </div>
                         <a
                         @click.prevent="addMarkup(area)"
@@ -72,9 +92,8 @@ const RareArea = Vue.component('RareArea', {
                         class="rate-list__item">
                             <area-markup
                             v-bind:markup="markup"
-                            v-bind:base="base"
                             @remove="removeMarkup"
-                            @chargeValue="addPrevValue"></area-markup>
+                            @chargeValue="addChargeValue"></area-markup>
                         </li>
                     </ul>
                 </div>`
