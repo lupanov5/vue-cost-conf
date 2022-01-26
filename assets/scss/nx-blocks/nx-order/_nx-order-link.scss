@@ -1,0 +1,55 @@
+.nx-order-link {
+    display: flex;
+    width: 100%;
+    background-color: $c-gray;
+    margin-bottom: 10px;
+    padding: 15px 25px 20px 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &__item {
+        color: $c-dark;
+    }
+    &__item-number {
+        min-width: 80px;
+        margin-right: 60px;
+    }
+    &__item-date {
+        min-width: 65px;
+        margin-right: 60px;
+    }
+    &__item-total {
+        min-width: 90px;
+        margin-right: 50px;
+        font-weight: 600;
+    }
+    &__details {
+        position: relative;
+        padding-right: 15px;
+    }
+    &__arrow {
+        width: 9px;
+        height: 5px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) scale(1);
+        right: 0;
+        transition: all $tr-time $tr-type;
+        .collapsed &{
+            transform: translateY(-50%) scale(-1);
+        }
+    }
+    
+    .spacer {
+        margin-left: auto;
+    }
+    
+    @include media('xs') {
+        flex-direction: column;
+        padding: 10px;
+        &__item {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+    }
+}

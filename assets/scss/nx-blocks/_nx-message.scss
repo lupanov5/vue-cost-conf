@@ -1,0 +1,24 @@
+.nx-message {
+    max-width: 655px;
+    width: 100%;
+    margin: 0 auto;
+    &__body {
+        position: relative;
+        padding-left: 70px;
+    }
+    
+    &__icon {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    &__text {
+        margin-bottom: 30px;
+    }
+}

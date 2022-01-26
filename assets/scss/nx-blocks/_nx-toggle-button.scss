@@ -1,0 +1,56 @@
+.nx-toggle-button {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    &__text {
+        cursor: pointer;
+        font-size: $fz-xmain;
+        font-weight: 500;
+        margin-left: 10px;
+        color: $c-dark;
+    }
+    &__input {
+        position: relative;
+        width: 35px;
+        height: 20px;
+        margin: 0;
+        vertical-align: top;
+        background: $c-gray-dark;
+        border-radius: 50px;
+        outline: none;
+        cursor: pointer;
+        appearance: none;
+        transition: all $tr-time $tr-type;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background-color: $white;
+            border-radius: 50%;
+            transform: translate(0, -50%);
+            transition: all $tr-time $tr-type;
+        }
+        &:checked {
+            background-color: $c-gray-dark;
+            &:after{
+                transform: translate(calc(100% + 3px), -50%);
+                background-color: $white;
+            }
+        }
+    }
+    @include media('xs') {
+        margin-bottom: 20px;
+    }
+}
+
+.nx-personal-actions {
+    display: flex;
+    align-items: center;
+    @include media('xs') {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,23 @@
+.nx-hcart {
+    position: relative;
+    
+    &__icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    &__cnt {
+        min-width: 18px;
+        height: 18px;
+        border-radius: 100px;
+        background-color: #000;
+        color: #fff;
+        font-size: $fz-min;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+}

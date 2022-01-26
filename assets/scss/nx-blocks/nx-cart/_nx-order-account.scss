@@ -1,0 +1,14 @@
+.nx-order-account {
+    border: 1px solid $c-gray-dark;
+    padding: 15px 20px 20px;
+    margin-bottom: 50px;
+    &__title {
+        font-size: $fz-xmain;
+        margin-bottom: 5px;
+    }
+    
+    &__text {
+        font-size: $fz-xmin;
+        margin-bottom: 10px;
+    }
+}

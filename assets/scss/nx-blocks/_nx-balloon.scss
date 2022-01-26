@@ -1,0 +1,45 @@
+$balloon: (
+    close-size: 15px,
+    close-color: rgba($c-dark, .5),
+    close-color-hover: $c-dark,
+    close-offset: 15px
+);
+.nx-balloon {
+    position: relative;
+    
+    .close {
+        width: map_get($balloon, close-size);
+        height: map_get($balloon, close-size);
+        fill: map_get($balloon, close-color);
+        position: absolute;
+        top: map_get($balloon, close-offset);
+        right: map_get($balloon, close-offset);
+        transition: all $tr-time $tr-type;
+        &:hover {
+            fill: map_get($balloon, close-color-hover);
+        }
+    }
+    
+    .close-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nx-contacts {
+        margin-bottom: 0;
+    }
+    
+    &__title {
+        margin-bottom: 10px;
+        font-size: $fz-xmain;
+    }
+    
+    &__content {
+        background-color: white;
+        padding: 30px 40px 35px 30px;
+        border: 1px solid $c-gray-dark;
+    }
+}

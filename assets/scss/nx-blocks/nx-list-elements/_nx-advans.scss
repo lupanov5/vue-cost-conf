@@ -1,0 +1,60 @@
+.nx-advans{
+    margin-bottom: -$grid-gutter;
+    
+    &__item{
+        display: block;
+        margin-bottom: $grid-gutter;
+    }
+    
+    &__title{
+        font-weight: bold;
+        font-size: $fz-xmain;
+    }
+    
+    &__icon{
+        display: block;
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
+        background: transparent center no-repeat;
+        background-size: cover;
+    }
+    
+    &__num {
+        font-size: $fz-xxbig;
+        font-weight: bold;
+    }
+    
+    &_light {
+        color: white;
+    }
+    
+    &_row {
+        .nx-advans__el {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .nx-advans__icon {
+            flex: none;
+            margin: 0 15px 0 0;
+            width: 50px;
+            height: 50px;
+        }
+        .nx-advans__text {
+            font-size: $fz-min;
+        }
+    }
+    
+    @include media('xs'){
+        margin-bottom: -$grid-gutter-xs;
+        &__el{
+            margin-bottom: $grid-gutter-xs;
+        }
+        &__icon{
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+    }
+}

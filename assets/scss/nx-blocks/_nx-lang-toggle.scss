@@ -1,0 +1,54 @@
+.nx-lang-toggle{
+    position: relative;
+    
+    &__item{
+        .nx-lang-toggle__link{
+            padding: 8px 16px 8px 46px;
+        }
+        .nx-lang-toggle__icon{
+            left: 16px;
+        }
+    }
+    
+    &__current{
+        padding-left: 30px;
+    }
+    
+    &__link, &__current{
+        display: block;
+        position: relative;
+        line-height: 1;
+    }
+    
+    &__icon{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 14px;
+        background: transparent center no-repeat;
+        background-size: contain;
+        border-bottom: none !important;
+    }
+    
+    &__list{
+        display: block;
+        position: absolute;
+        top: 150%;
+        left: -16px !important;
+        opacity: 0;
+        background-color: white;
+        border: 1px solid lightgray;
+        border-radius: $brd-rad-box;
+        transition: all $tr-time $tr-type;
+        visibility: hidden;
+        z-index: 1;
+        &.show{
+            top: 105% !important;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

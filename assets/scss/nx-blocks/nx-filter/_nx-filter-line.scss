@@ -1,0 +1,46 @@
+.nx-filter-line {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    
+    &__item {
+        display: flex;
+        align-items: center;
+    }
+    
+    &__values {
+        margin-left: 10px;
+    }
+    
+    &__title {
+        margin-right: 5px;
+        font-size: $fz-min;
+        color: rgba($c-dark, .5);
+    }
+    
+    &__link {
+        margin-right: 10px;
+        font-size: $fz-min;
+        &:last-child {
+            margin-right: 0;
+        }
+        &.active {
+            span {
+                border-bottom: none;
+            }
+        }
+    }
+    
+    @include media('xs') {
+        flex-direction: column;
+        align-items: flex-start;
+        
+        &__item {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

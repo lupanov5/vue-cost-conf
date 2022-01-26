@@ -1,0 +1,100 @@
+.mtoggle{
+    display: block;
+    height: map_get($header, height-sm);
+    width: map_get($header, height-sm) + $container-gutter-sm*2;
+    margin-left: -$container-gutter-sm;
+    line-height: 1;
+    z-index: 499;
+    background-color: map_get($mtoggle, bg);
+    -webkit-tap-highlight-color: transparent;
+    
+    .search-open &{
+        z-index: 9;
+    }
+    &, &:hover{
+        color: map_get($mtoggle, color);
+        span{
+            border-bottom: none;
+        }
+    }
+    
+    &__icon{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: map_get($mtoggle, width)/-2;
+        margin-top: map_get($mtoggle, height)/-2;
+        background-color: map_get($mtoggle, color);
+        transition: all $tr-time $tr-type;
+        height: map_get($mtoggle, height);
+        width: map_get($mtoggle, width);
+        border-radius: $brd-rad-main;
+        user-select: none;
+        &:after, &:before{
+            content: "";
+            display: inherit;
+            position: inherit;
+            top: 0;
+            background-color: inherit;
+            height: inherit;
+            border-radius: inherit;
+            width: 100%;
+            transition: width $tr-time $tr-type;
+        }
+        &:after{
+            margin-top: map_get($mtoggle, distanceBetween);
+        }
+        &:before{
+            margin-top: -#{map_get($mtoggle, distanceBetween)};
+        }
+    }
+
+
+    &:hover{
+        color: map_get($mtoggle, color-hover);
+        .mtoggle__icon{
+            background-color: map_get($mtoggle, color-hover);
+            &:after, &:before{
+                width: 100%;
+            }
+        }
+    }
+
+    .menu-open &{
+        .mtoggle__icon{
+            transform: rotate(180deg);
+            background-color: transparent;
+            &:after, &:before{
+                margin: 0;
+                background-color: map_get($mtoggle, color-active);
+                transition: all $tr-time $tr-type;
+            }
+            &:after{
+                top: 0;
+                transform: rotate(45deg);
+            }
+            &:before{
+                bottom: 0;
+                transform: rotate(-45deg);
+            }
+        }
+        &:hover{
+            .mtoggle__icon{
+                &:after, &:before{
+                    background-color: map_get($mtoggle, color-active);
+                }
+            }
+        }
+    }
+
+    @include media('sm-max'){
+        display: block;
+    }
+
+    @include media('xs'){
+        height: map_get($header, height-xs);
+        min-width: map_get($header, height-xs) + $container-gutter-xs*2;
+        margin-left: -$container-gutter-xs;
+    }
+}

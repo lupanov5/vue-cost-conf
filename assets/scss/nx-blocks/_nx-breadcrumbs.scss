@@ -1,0 +1,47 @@
+.nx-breadcrumbs {
+    position: relative;
+    margin-top: -10px;
+    margin-bottom: 40px;
+    font-size: $fz-main;
+    display: flex;
+    flex-wrap: wrap;
+    
+    &__item {
+        position: relative;
+        display: block;
+        padding-right: 20px;
+        margin-right: 5px;
+        min-width: 0;
+        
+        &:last-child {
+            .nx-breadcrumbs__arrow {
+                display: none;
+            }
+        }
+    }
+    
+    &__back {
+        width: 7px;
+        height: 12px;
+        margin-right: 5px;
+        fill: map_get($link, color-main);
+    }
+    
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: block;
+        font-size: 16px;
+        line-height: 1;
+        transform: translateY(-50%);
+        opacity: .5;
+        
+        .bc-active & {
+            display: none;
+        }
+    }
+    @include media('xs') {
+        margin-bottom: 20px;
+    }
+}

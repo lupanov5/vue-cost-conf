@@ -1,0 +1,43 @@
+.nx-cart-info {
+    [data-cart] & {
+        padding-top: 25px;
+    }
+    
+    &__title {
+        font-size: $fz-xmain;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $c-gray-dark;
+    }
+    
+    &__note {
+        font-size: $fz-min;
+        color: rgba($c-dark, .5);
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    &__price {
+        white-space: nowrap;
+        margin-bottom: 5px;
+    }
+    
+    &__discount {
+        font-size: $fz-xmain;
+    }
+    
+    &__total,
+    &__weight {
+        color: rgba($c-dark, .5);
+    }
+    
+    &__btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+    
+    &__body {
+        margin-bottom: 30px;
+    }
+}

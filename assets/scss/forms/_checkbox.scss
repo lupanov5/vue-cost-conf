@@ -1,0 +1,240 @@
+$checkbox: (
+    size: 18px,
+    brd: map_get($input, brd),
+    brd-hover: map_get($input, brd-hover),
+    brd-active: map_get($input, brd-focus),
+    bg: map_get($input, bg),
+    bg-active: map_get($input, brd-focus),
+    disabled: map_get($input, disabled),
+    disabled-checked: rgba(black, .3)
+);
+
+.checkbox {
+    position: relative;
+    display: block;
+    user-select: none;
+
+    &__count {
+        font-size: $fz-min;
+        color: rgba(#000, .5);
+    }
+    
+    &__input {
+        display: none;
+
+        & + .checkbox__text {
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            cursor: pointer;
+            padding: 0 0 0 map_get($checkbox, size) + 10;
+            min-height: map_get($checkbox, size);
+
+            &:before, &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 2px;
+                border-radius: 2px;
+                font-size: map_get($checkbox, size);
+                line-height: 1;
+                width: map_get($checkbox, size);
+                height: map_get($checkbox, size);
+                transition: all $tr-time $tr-type;
+                text-align: center;
+                box-shadow: none;
+            }
+
+            &:before {
+                border: 1px solid map_get($checkbox, brd);
+                background: map_get($checkbox, bg);
+            }
+
+            &:after {
+                content: '';
+                background-color: map_get($checkbox, bg-active);
+                color: map_get($checkbox, bg-active);
+                visibility: hidden;
+                opacity: 0;
+                transform: scale(0, 0);
+            }
+
+            &:hover {
+                &:before {
+                    border-color: map_get($checkbox, brd-hover);
+                }
+                &:after{
+                    color: map_get($link, color-hover);
+                }
+            }
+        }
+
+        &:checked + .checkbox__text{
+            &:before {
+                border-color: map_get($checkbox, brd-active);
+            }
+            &:after {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(.5, .5);
+            }
+        }
+        
+        &:checked + .checkbox__wrap{
+            border: 2px solid $c-dark;
+        }
+
+
+        &[disabled], &[disabled="disabled"], &.disabled{
+            & + .checkbox__text{
+                cursor: default;
+                &:before, &:after {
+                    box-shadow: none;
+                }
+                &:before {
+                    border-color: transparent;
+                    background-color: map_get($checkbox, disabled);
+                }
+                &:after{
+                    color: map_get($checkbox, disabled);
+                    background-color: transparent;
+                }
+            }
+            &:checked + .checkbox__text{
+                &:before {
+                    border-color: transparent;
+                    background-color: map_get($checkbox, disabled);
+                }
+                &:after{
+                    color: map_get($checkbox, disabled);
+                    background-color: map_get($checkbox, disabled-checked);
+                }
+            }
+        }
+    }
+
+    &_radio{
+        .checkbox__input{
+            & + .checkbox__text{
+                &:before, &:after {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    
+    &_light {
+        .checkbox__text {
+            color: rgba($c-dark, .5);
+            font-size: $fz-xmin;
+        }
+    }
+    
+    &_big{
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .checkbox__wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+    
+            padding: 10px 20px;
+            height: 120px;
+    
+            background-color: white;
+            border: 1px solid $c-gray-dark;
+            cursor: pointer;
+        }
+        
+        .checkbox__title {
+            font-size: $fz-xmain;
+            font-weight: 500;
+        }
+        
+        .checkbox__list {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: -5px;
+            margin-top: 15px;
+        }
+        
+        .checkbox__img {
+            margin-right: 15px;
+            margin-bottom: 5px;
+            height: 15px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        
+        .checkbox__text {
+            font-size: $fz-xmin;
+            color: rgba($c-dark, .6);
+        }
+        
+        .checkbox__input{
+            & + .checkbox__text{
+                &:before, &:after {
+                    display: none;
+                }
+            }
+        }
+        &.disabled {
+            .checkbox__wrap {
+          //      border-color: $c-grey-sec;
+                cursor: default;
+                opacity: .7;
+                pointer-events: none;
+            }
+        }
+    }
+    
+    &_inline {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 16px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &_mb{
+        margin-bottom: 10px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &_empty {
+        width: map_get($checkbox, size);
+        height: map_get($checkbox, size);
+
+        .checkbox__text {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding-left: 0;
+            &:after, &:before {
+                top: 0;
+            }
+        }
+    }
+
+    @include media('xs'){
+        &_big {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+[type="checkbox"], [type="radio"]{
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-bottom: 3px;
+}

@@ -1,0 +1,28 @@
+.nx-partners {
+    margin-bottom: -40px;
+    
+    &__item {
+        margin-bottom: 40px;
+    }
+    
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        &:hover {
+            opacity: .8;
+        }
+    }
+    
+    &__img {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        max-width: 275px;
+        max-height: 130px;
+        object-fit: contain;
+        font-family: "object-fit: contain;";
+    }
+}

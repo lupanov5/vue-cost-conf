@@ -1,0 +1,57 @@
+.nx-contacts {
+    flex-wrap: wrap;
+    
+    &__element {
+        margin-bottom: 40px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__title {
+        margin-bottom: 15px;
+    }
+    
+    &__label {
+        color: $c-gray-dark;
+        font-size: $fz-min;
+        margin-bottom: 5px;
+    }
+    
+    &__item {
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__link,
+    &__text {
+        display: block;
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    @include media('xs') {
+        margin-bottom: -30px;
+        &__element {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.nx-map {
+    height: 450px;
+    &_small {
+        height: 265px;
+    }
+    &_xsmall {
+        margin-top: 15px;
+        height: 230px;
+    }
+    @media('xs') {
+        height: 300px;
+    }
+}

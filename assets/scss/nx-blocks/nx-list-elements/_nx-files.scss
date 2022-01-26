@@ -1,0 +1,174 @@
+$file: (
+    icon-w: 68px,
+    icon-w-big: 110px,
+    icon-w-xs: 60px,
+    icon-h: 90px,
+    icon-h-big: 150px,
+    icon-h-hs: 80px
+);
+.nx-files{
+    margin-bottom: -$grid-gutter;
+    
+    &__item{
+        display: block;
+        margin-bottom: $grid-gutter;
+        position: relative;
+    }
+    
+    &__del{
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        justify-content: center;
+        padding: 0 15px;
+        color: $c-red;
+        font-size: 30px;
+        &:hover{
+            opacity: .7;
+        }
+    }
+    
+    &__link{
+        display: flex;
+        width: 100%;
+    }
+    
+    &__icon{
+        flex: none;
+        display: block;
+        align-self: flex-start;
+        width: map_get($file, icon-w);
+        height: map_get($file, icon-h);
+        background: transparent center no-repeat;
+        background-size: contain;
+        margin-right: 15px;
+    }
+
+    &__type{
+        display: block;
+        margin-top: 10px;
+        color: $note-color;
+        font-size: $fz-min;
+    }
+    
+    &_single{
+        max-width: 320px;
+    }
+    
+    &_certs {
+        .nx-files__link {
+            display: block;
+            height: 100%;
+        }
+        
+        .nx-files__head {
+            height: auto;
+            padding-bottom: 132.5%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .nx-files__img {
+            max-width: 100%;
+            max-height: 100%;
+            @extend %centered-absolute;
+        }
+        
+        .spacer-v {
+            margin-bottom: auto;
+        }
+    }
+    
+    &_upload {
+        margin-bottom: 0;
+        
+        .nx-files__item{
+            margin-bottom: 15px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        
+        .nx-files__icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        .nx-files__link{
+            cursor: default;
+            fill: $c-blue;
+            &:hover{
+                fill: map_get($link, color-hover);
+            }
+            &.link{
+                cursor: pointer;
+            }
+        }
+        
+        span:not(.nx-files__title){
+            border-bottom: none;
+        }
+        
+        .nx-files__title {
+            font-size: $fz-min;
+            span{
+                opacity: .6;
+            }
+        }
+        
+        .nx-files__type {
+            margin-top: 5px;
+        }
+    }
+    &_big {
+        .nx-files__icon {
+            width: map_get($file, icon-w-big);
+            height: map_get($file, icon-h-big);
+        }
+        
+        .nx-files__link {
+            align-items: center;
+        }
+        
+        .nx-files__type {
+            margin-top: 13px;
+        }
+    }
+    
+    &_bill {
+        .nx-files__item {
+            max-width: 360px;
+            width: 100%;
+        }
+    
+        .nx-files__link {
+            align-items: center;
+        }
+        
+        .nx-files__icon {
+            width: 80px;
+            height: 105px;
+        }
+    }
+    
+    @include media('xs'){
+        margin-bottom: -$grid-gutter-sm;
+        
+        &__item{
+            margin-bottom: $grid-gutter-sm;
+        }
+        
+        &__icon{
+            width: map_get($file, icon-w-xs);
+            height: map_get($file, icon-h-xs);
+            margin-bottom: 10px;
+        }
+        
+        &_upload {
+            margin-bottom: 0;
+        }
+    }
+}
+

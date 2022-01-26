@@ -1,0 +1,27 @@
+.nx-reviews{
+    margin-bottom: 40px;
+    
+    &__item {
+        margin-bottom: 20px;
+        background-color: $c-gray;
+        padding: 25px 25px 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__line {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    @include media('xs') {
+        &__line {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

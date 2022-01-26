@@ -1,0 +1,81 @@
+.nx-counter{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    position: relative;
+    padding: 0 20px;
+    width: 95px;
+    height: 40px;
+    overflow: hidden;
+    background-color: transparent;
+    border: 1px solid $c-gray-dark;
+    
+    &__input[type="text"]{
+        text-align: center;
+        height: 100%;
+        padding: 0;
+        font-size: $fz-med;
+        line-height: 130%;
+        color: $c-dark;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+        
+        .nx-cart-list & {
+            font-size: $fz-main;
+        }
+        
+        &, &:hover, &:focus{
+            background-color: transparent;
+            border: none;
+        }
+    }
+    
+    &-btn{
+        display: block;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        overflow: hidden;
+        text-align: center;
+        width: 20px;
+        font-size: $fz-xmin;
+        line-height: 40px;
+        color: $c-dark;
+        span{
+            border-bottom: none;
+        }
+        &:hover:not(.disabled){
+            color: $c-red;
+        }
+        
+        &_plus, &_minus{
+            &:after{
+                font-size: 20px;
+                height: 20px;
+                line-height: inherit;
+                display: block;
+            }
+            &.disabled{
+                cursor: default;
+                opacity: .5;
+            }
+        }
+        
+        &_plus{
+            right: 5px;
+            &:after{
+                content: "+";
+            }
+        }
+        
+        &_minus{
+            left: 5px;
+            &:hover:not(.disabled){
+            }
+            &:after{
+                content: "-";
+            }
+        }
+    }
+}

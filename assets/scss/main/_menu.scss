@@ -1,0 +1,143 @@
+.mnav{
+    position: relative;
+    &__wrap{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__brand, &__lang{
+        display: none;
+    }
+
+    @include media('sm-max'){
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 500;
+        height: 100%;
+        overflow: hidden;
+        background-color: map_get($menu, bg);
+        width: map_get($menu, width);
+        transition: all $tr-time $tr-type;
+        visibility: hidden;
+        //opacity: 0;
+        transform: translateX(-100%);
+        .menu-open &{
+            visibility: visible;
+            opacity: 1;
+            transform: none;
+            box-shadow: 3px 0 5px rgba(black, .05);
+        }
+        
+        &__container{
+            padding: 0 20px;
+        }
+        
+        &__search, &__lang{
+            margin-bottom: 30px;
+        }
+    
+        &__brand, &__lang{
+            display: block;
+        }
+        &__brand{
+            padding: 16px 20px 16px;
+            margin-bottom: 8px;
+        }
+
+        &__wrap{
+            max-height: 100%;
+            padding-left: map_get($scrollbarCustom, handle-size);
+            padding-bottom: map_get($scrollbarCustom, handle-size);
+            .os-scrollbar{
+                display: none;
+            }
+        }
+    }
+}
+
+.main-menu{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -5px;
+    list-style-type: none;
+    width: 100%;
+    &__el{
+        margin-right: 20px;
+        margin-bottom: 5px;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    &__link{
+        display: block;
+    }
+
+    @include media('sm-max'){
+        display: block;
+        margin-bottom: 0;
+        &__el{
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+        &__link{
+            padding: 8px $container-gutter-sm;
+        }
+    }
+    @include media('sm-max'){
+        &__link{
+            padding: 8px $container-gutter-xs;
+        }
+    }
+}
+
+.sub-menu{
+    position: absolute;
+    top: 130%;
+    left: 0;
+    width: map_get($submenu, width);
+    display: block;
+    list-style-type: none;
+    background-color: map_get($submenu, bg);
+    border-radius: $brd-rad-box;
+    max-height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 3px 5px rgba(black, .05);
+    transition: all $tr-time $tr-type;
+    visibility: hidden;
+    opacity: 0;
+    &__link{
+        display: block;
+        padding: 8px 24px;
+    }
+    .sub-menu-open &{
+        visibility: visible;
+        opacity: 1;
+        top: 100%;
+    }
+
+    @include media('sm-max'){
+        position: static;
+        //display: none;
+        transition: none;
+        visibility: visible;
+        opacity: 1;
+        box-shadow: none;
+        max-height: none;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-color: map_get($submenu, bg-xs);
+        width: 100%;
+        
+        /*&.is-active {
+            display: block;
+        }*/
+        &__link{
+            display: block;
+            padding: 6px ($container-gutter-xs*2);
+        }
+    }
+}

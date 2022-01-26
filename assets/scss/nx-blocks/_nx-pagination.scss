@@ -1,0 +1,69 @@
+.nx-pagination{
+    display: flex;
+    justify-content: center;
+    margin: 65px auto 0;
+    
+    &__arrow{
+        display: block;
+        padding: 0 12px;
+        fill: $c-blue;
+        opacity: .8;
+        &-icon{
+            width: 8px;
+            height: 22px;
+        }
+        &_next{
+            transform: scaleX(-1);
+        }
+        &:hover{
+            opacity: .7;
+        }
+        &.disabled{
+            opacity: .3;
+            cursor: default;
+        }
+    }
+
+    &__link{
+        display: block;
+        padding: 0 7px;
+        span{
+            border-bottom: none;
+        }
+        .active &{
+            opacity: .3;
+            cursor: default;
+            color: green;
+        }
+    }
+    
+    &__dots{
+        padding: 0 7px;
+    }
+    
+    &_single {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+    }
+
+    @include media('xs'){
+        margin: 45px auto 0;
+        &__arrow{
+            padding: 0 9px;
+        }
+        
+        &__dots{
+            padding: 0 9px;
+        }
+        
+        &__link{
+            padding: 0 7px;
+        }
+        &_single {
+            position: static;
+        }
+    }
+}

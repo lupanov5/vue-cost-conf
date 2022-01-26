@@ -1,0 +1,227 @@
+.nx-cart-list {
+    [data-fast-order] & {
+        margin-bottom: 20px;
+        .nx-cart-list__main {
+            width: 75%;
+        }
+        .nx-cart-list__item {
+            padding-right: 0;
+        }
+        .nx-cart-list__title {
+            font-size: $fz-xmin;
+        }
+        .nx-cart-list__total {
+            width: 130px;
+            margin-left: 25px;
+        }
+    }
+    
+    .order-success & {
+        .nx-cart-list__main {
+            width: 65%;
+        }
+        .nx-cart-list__item {
+            box-shadow: none;
+        }
+        .nx-cart-list__note {
+            margin-bottom: 20px;
+        }
+    }
+    
+    &__item {
+        position: relative;
+        padding: 10px 75px 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        &.deleted {
+            .nx-cart-list__deleted {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    
+    &__main {
+        position: relative;
+        padding-left: 120px;
+        padding-right: 5px;
+        min-height: 100px;
+        width: 45%;
+    }
+    
+    &__img-link {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    &__img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    &__note {
+        margin-bottom: 10px;
+        font-size: $fz-little;
+        color: $c-gray-dark;
+        span {
+            color: $c-dim-gray;
+        }
+    }
+    
+    &__price {
+        font-size: $fz-xmain;
+        font-weight: 500;
+        &_old {
+            font-size: $fz-main;
+            color: $c-gray-dark;
+            font-weight: 300;
+            span {
+                position: relative;
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    border-bottom: 1px solid $c-gray-dark;
+                    width: 100%;
+                    height: 50%;
+                    transform: rotate(-7deg);
+                }
+            }
+        }
+    }
+    
+    &__price-wr {
+        width: 140px;
+    }
+    
+    &__price-cnt {
+        font-size: $fz-min;
+        color: $c-gray-dark;
+        margin-left: 5px;
+    }
+    
+    &__total {
+        font-size: $fz-xmain;
+        font-weight: 500;
+        width: 110px;
+    }
+    
+    &__total-weight {
+        font-size: $fz-min;
+        color: rgba($c-dark, .5);
+    }
+    
+    &__weight {
+        width: 85px;
+    }
+    
+    &__counter {
+        width: 95px;
+        padding: 0 10px;
+        .order-success & {
+            text-align: center;
+        }
+    }
+    
+    &__deleted {
+        font-size: $fz-min;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 101%;
+        height: 101%;
+        z-index: 2;
+        background-color: rgba(white, .9);
+        visibility: hidden;
+        opacity: 0;
+        transition: all $tr-time $tr-type;
+        .is-deleted &{
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    
+    &__deleted-text {
+        margin-right: 7px;
+    }
+    
+    &__remove {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+        fill: rgba($c-dark, .5);
+        .icon {
+            @extend %centered-absolute;
+            width: 100%;
+            height: 100%;
+        }
+        &:hover {
+            fill: $c-dark;
+        }
+    }
+    
+    @include media('xs') {
+        &__item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        &__main {
+            width: 100%;
+            padding: 110px 0 0 0;
+            margin-bottom: 5px;
+        }
+
+        &__img-link {
+            top: 0;
+            transform: none;
+        }
+        
+        &__articul {
+            margin-bottom: 0;
+        }
+        
+        &__remove {
+            transform: none;
+            top: 20px;
+            right: 20px;
+        }
+        
+        &__price-wr {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        
+        &__price {
+            order: 1;
+        }
+        
+        &__price_old {
+            order: 2;
+        }
+        
+        &__counter {
+            position: absolute;
+            bottom: 10px;
+            right: 20px
+        }
+        
+        &__total {
+            margin-top: 20px;
+        }
+    }
+}

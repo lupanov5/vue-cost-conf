@@ -1,0 +1,11 @@
+.nx-share {
+    &__label {
+        color: rgba($c-dark, .8);
+    }
+    
+    @include media('xs') {
+        &__label {
+            margin-bottom: 10px;
+        }
+    }
+}

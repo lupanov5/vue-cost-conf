@@ -1,0 +1,37 @@
+.nx-popup {
+  position: fixed;
+  left: 0;
+  bottom: 35px;
+  z-index: 500;
+
+  &__block {
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border-radius: 5px;
+    font-size: $fz-main;
+    padding: 20px 30px 20px 20px;
+    z-index: 500;
+    max-width: 600px;
+    width: 100%;
+    background-color: $white;
+    margin: 0 auto;
+
+    @include media('xs') {
+      font-size: $fz-xmin;
+    }
+  }
+
+  &__text {
+    margin-bottom: 10px;
+    color: $c-dark;
+  }
+
+  &__close {
+    font-size: $fz-main;
+    color: map_get($link, color-main);
+    position: relative;
+
+    @include media('xs') {
+      font-size: $fz-xmin;
+    }
+  }
+}

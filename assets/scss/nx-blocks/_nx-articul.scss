@@ -1,0 +1,21 @@
+.nx-articul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: $c-gray-dark;
+    font-size: $fz-little;
+    margin-bottom: 15px;
+    
+    &_start {
+        justify-content: flex-start;
+        span {
+            margin-right: 15px;
+        }
+    }
+    
+    span {
+        border-bottom: none;
+        color: $c-dark;
+    }
+}

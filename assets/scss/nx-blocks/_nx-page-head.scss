@@ -1,0 +1,29 @@
+.nx-page-head{
+    position: relative;
+    margin-top: -#{map_get($header, height)};
+    padding-top: map_get($header, height);
+    padding-bottom: 80px;
+    background: $c-dark center no-repeat;
+    background-size: cover;
+    color: map_get($text, color-light);
+    
+    &__title{
+        color: inherit;
+    }
+    
+    &__actions{
+        margin-top: 40px;
+    }
+    
+    @include media('sm-min', 'sm-max'){
+        margin-top: -#{map_get($header, height-sm)};
+        padding-top: map_get($header, height-sm);
+        padding-bottom: 60px;
+    }
+    
+    @include media('xs'){
+        margin-top: -#{map_get($header, height-xs)};
+        padding-top: map_get($header, height-xs);
+        padding-bottom: 40px;
+    }
+}

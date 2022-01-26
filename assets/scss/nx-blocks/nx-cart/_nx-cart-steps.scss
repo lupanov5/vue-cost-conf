@@ -1,0 +1,38 @@
+.nx-cart-steps {
+    display: flex;
+    margin-left: auto;
+    
+    &__item {
+        margin-right: 5px;
+        position: relative;
+        &:last-child {
+            margin-right: 0;
+        }
+        
+        &.current,
+        &.prev {
+            color: #000;
+            .nx-cart-steps__link {
+                color: #000;
+                span {
+                    border-bottom-color: #000;
+                }
+            }
+        }
+    }
+    
+    &__link {
+        color: rgba($c-dark, .5);
+        padding-right: 15px;
+        font-size: $fz-min;
+        display: block;
+    }
+    
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        font-size: $fz-min;
+    }
+}

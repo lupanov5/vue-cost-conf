@@ -1,0 +1,154 @@
+$social: (
+    default-bg: gray,
+    default-fill: white,
+    vk: #4A729F,
+    tw: #1C9DEC,
+    fb: #4064AD,
+    tg: #0084C6,
+    google: #0084C6,
+    od: #F38A11,
+    wa: #4DC85A,
+    yt: #FF0000,
+    pin: #E00022,
+    inst: #E1306C,
+    email: #F1B328,
+    size: 40px,
+    size-xs: 35px,
+    offset-bottom: 10px,
+    offset-right: 25px,
+    offset-right-xs: 15px,
+);
+.nx-socials{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: -#{map_get($social, offset-bottom)};
+    
+    &__item{
+        margin-right: map_get($social, offset-right);
+        margin-bottom: map_get($social, offset-bottom);
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    
+    &__link{
+        display: block;
+        width: map_get($social, size);
+        height: map_get($social, size);
+        background-color: map_get($social, default-bg);
+        border-radius: 50%;
+        fill: map_get($social, default-fill);
+        &:hover{
+            fill: rgba(white, 1);
+        }
+        
+        &_inst{
+            &:hover{
+                background-color: map_get($social, inst);
+            }
+            .nx-socials__icon {
+                width: 55%;
+                height: 55%;
+            }
+        }
+    
+        &_google{
+            &:hover{
+                background-color: map_get($social, google);
+            }
+            .nx-socials__icon {
+                width: 55%;
+                height: 55%;
+            }
+        }
+        
+        &_vk{
+            .nx-socials__icon {
+                width: 60%;
+                height: 60%;
+            }
+            &:hover{
+                background-color: map_get($social, vk);
+            }
+        }
+        
+        &_fb{
+            &:hover{
+                background-color: map_get($social, fb);
+            }
+        }
+        
+        &_ok {
+            &:hover {
+                background-color: map_get($social, od);
+            }
+        }
+        
+        &_yt {
+            &:hover {
+                background-color: map_get($social, yt);
+            }
+        }
+    }
+    
+    &__icon{
+        display: block;
+        @extend %centered-absolute;
+        width: 50%;
+        height: 50%;
+    }
+    
+    &_white{
+        .socials__link{
+            background-color: rgba(white, .3);
+            &_inst:hover{
+                background-color: map_get($social, inst);
+            }
+            &_vk:hover {
+                background-color: map_get($social, vk);
+            }
+            &_fb:hover{
+                background-color: map_get($social, fb);
+            }
+        }
+    }
+    
+    &_small {
+        .nx-socials__item {
+            margin-right: 15px;
+        }
+        
+        .nx-socials__link {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    
+    &_inline{
+        display: inline-flex;
+        margin-bottom: 0;
+        .socials__el{
+            margin-bottom: 0;
+        }
+    }
+    
+    @include media('xs') {
+        &__item{
+            margin-right: map_get($social, offset-right-xs);
+        }
+        
+        &__link {
+            width: map_get($social, size-xs);
+            height: map_get($social, size-xs);
+        }
+    }
+}
+
+.nx-socials-group {
+    margin-bottom: 25px;
+}
+
+.nx-socials-title {
+    margin-bottom: 10px;
+}

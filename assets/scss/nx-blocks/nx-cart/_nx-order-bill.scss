@@ -1,0 +1,12 @@
+.nx-order-bill {
+    border: 2px solid $c-gray-dark;
+    padding: 30px 25px 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+    &__title {
+        font-size: $fz-xlarge;
+    }
+}

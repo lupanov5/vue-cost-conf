@@ -1,0 +1,90 @@
+.nx-filter {
+    
+    &__nav {
+        margin-bottom: 15px;
+    }
+    
+    &__form {
+        padding: 25px 25px 30px;
+        background-color: $c-gray;
+    }
+    
+    &__section {
+        border-bottom: 1px solid $c-gray-dark;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__item {
+        margin-bottom: 13px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__scroll {
+        padding-top: 15px;
+        max-height: 230px;
+    }
+    
+    &__close {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: -40px;
+        display: none;
+        .icon {
+            @extend %centered-absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &__actions {
+        text-align: center;
+        &-item {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    @include media('sm-max') {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $c-gray;
+        transform: translateX(-100%);
+        visibility: hidden;
+        opacity: 0;
+        transition: all $tr-time $tr-type;
+        z-index: 510;
+        width: 260px;
+        padding: 20px 30px;
+        .filter-open & {
+            transform: translateX(0);
+            visibility: visible;
+            opacity: 1;
+        }
+        &__form {
+            padding: 25px 0 30px;
+        }
+        &__close {
+            display: block;
+        }
+    }
+}
+
+.nx-filter-btn {
+    display: none;
+    @include media('sm-max') {
+        display: inline-block;
+        margin-bottom: 25px;
+    }
+}

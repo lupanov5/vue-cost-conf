@@ -1,0 +1,37 @@
+.nx-form-subscribe {
+    padding: 30px 65px 40px;
+    background-color: $c-gray-dark;
+    color: white;
+    
+    &__body {
+        width: 100%;
+    }
+    
+    &_row {
+        display: flex;
+        width: 100%;
+        .nx-form-subscribe__content {
+            margin-bottom: 0;
+            width: 100%;
+        }
+        
+        .nx-form-subscribe__body {
+            margin-left: 35px;
+            max-width: 310px;
+        }
+    }
+    
+    @include media('sm-max') {
+        &_row {
+            display: block;
+            .nx-form-subscribe__body {
+                margin: 20px 0 0;
+                max-width: 100%;
+            }
+        }
+    }
+    
+    @include media('xs') {
+        padding: 20px 25px 30px;
+    }
+}

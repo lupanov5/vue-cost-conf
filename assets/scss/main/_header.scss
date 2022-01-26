@@ -1,0 +1,87 @@
+.header{
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    right: 0;
+    margin: auto;
+    height: map_get($header, height);
+    background-color: map_get($header, bg);
+    z-index: 500;
+    max-width: 100%;
+    min-width: map-get($container, min-width);
+    .filter-open &{
+        z-index: 0;
+    }
+    &__wrap, &__container{
+        height: 100%;
+    }
+    &__container{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__mtoggle{
+        display: none;
+        height: 100%;
+    }
+
+    &__brand{
+        width: 90px;
+        margin-right: 40px;
+    }
+    
+    &__search, &__lang{
+        margin-left: 20px;
+    }
+
+    .spacer{
+        margin-left: auto;
+    }
+
+    @include media('sm-max'){
+        &__mtoggle{
+            display: block;
+        }
+
+        &__brand{
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            height: 100%;
+            padding: 5px 0;
+            width: auto;
+            margin-right: 0;
+            .brand{
+                height: 100%;
+            }
+        }
+    }
+
+    @include media('sm-max'){
+        &__search, &__lang{
+            display: none;
+        }
+    }
+
+    @include media('sm-min', 'sm-max'){
+        height: map_get($header, height-sm);
+    }
+
+    @include media('xs'){
+        height: map_get($header, height-xs);
+    }
+}
+
+.brand{
+    display: block;
+    width: 100%;
+    &:hover{
+        opacity: .8;
+    }
+
+    &__img{
+        max-height: 100%;
+    }
+}

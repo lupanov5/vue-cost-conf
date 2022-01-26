@@ -1,0 +1,8 @@
+.range-slider-box{
+    &__inputs{
+        margin-bottom: 15px;
+    }
+}
+[data-rs-main-inp]{
+    visibility: hidden;
+}

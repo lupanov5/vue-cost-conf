@@ -1,0 +1,90 @@
+.nx-tooltip {
+    fill: $c-gray-dark;
+    
+    &__icon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+        cursor: pointer;
+        &:hover {
+            + .nx-tooltip__item {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        left: -12px;
+        margin-top: -12px;
+        width: 12px;
+        height: 24px;
+        overflow: hidden;
+        transform: rotate(180deg);
+        &:after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            left: 0;
+            top: 50%;
+            transform: translate(-50%,-50%) rotate(45deg);
+            background-color: #fff;
+            border: 1px solid $c-gray-dark;
+        }
+    }
+    
+    &__item {
+        width: 270px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -126%;
+        visibility: hidden;
+        opacity: 0;
+        transition: all $tr-time $tr-type;
+        background-color: white;
+        cursor: text;
+        border: 1px solid $c-gray-dark;
+        padding: 10px 10px 10px 15px;
+    }
+    
+    &_top {
+        .nx-tooltip__item {
+            top: auto;
+            bottom: -10px;
+            width: 250px;
+            padding: 15px 20px 15px;
+        }
+        .nx-tooltip__text {
+            color: $c-dark;
+        }
+        .nx-tooltip__arrow {
+            position: absolute;
+            top: 100%;
+            left: auto;
+            right: 30px;
+            margin-top: -6px;
+            width: 12px;
+            height: 24px;
+            overflow: hidden;
+            transform: rotate(90deg);
+            &:after {
+                content: '';
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                left: 0;
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                background-color: #fff;
+                border: 1px solid $c-gray-dark;
+            }
+        }
+    }
+}

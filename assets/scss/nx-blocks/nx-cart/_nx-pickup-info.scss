@@ -1,0 +1,15 @@
+.nx-pickup-info {
+    position: relative;
+    padding-left: 40px;
+    color: rgba($c-dark, .9);
+    font-size: $fz-xmin;
+    
+    &__icon {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+}

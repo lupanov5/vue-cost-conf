@@ -1,0 +1,26 @@
+.nx-order-head {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0 0 10px 30px;
+    &__item {
+        font-size: $fz-little;
+        color: rgba($c-dark, .5);
+    }
+    &__item-number {
+        min-width: 80px;
+        margin-right: 60px;
+    }
+    &__item-date {
+        min-width: 65px;
+        margin-right: 60px;
+    }
+    &__item-total {
+        min-width: 90px;
+        margin-right: 50px;
+    }
+    
+    @include media('xs') {
+        display: none;
+    }
+}

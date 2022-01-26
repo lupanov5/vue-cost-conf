@@ -1,0 +1,47 @@
+.nx-attrs {
+    margin-bottom: 35px;
+    
+    &__item{
+        display: flex;
+        width: 100%;
+        padding: 15px 30px 20px;
+        &:nth-child(odd) {
+            background-color: rgba($c-dark, .05);
+        }
+    }
+    
+    &__body {
+        position: relative;
+    }
+    
+    &__name{
+        overflow: hidden;
+        width: percentage(8/$grid-cols);
+        margin-right: 25px;
+    }
+    
+    &__value {
+        width: percentage(12/$grid-cols);
+    }
+    
+    @include media('sm-max') {
+        &__name {
+            width: percentage(12/$grid-cols);
+        }
+        &__value {
+            width: percentage(12/$grid-cols);
+        }
+    }
+    
+    @include media('xs'){
+        &__item {
+            font-size: $fz-main;
+        }
+        &__name{
+            margin-bottom: 3px;
+            &:after {
+                display: none;
+            }
+        }
+    }
+}

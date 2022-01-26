@@ -1,0 +1,86 @@
+.btn{
+    position: relative;
+    display: inline-block;
+    background-color: $c-blue;
+    border: none;
+    height: auto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: center;
+    white-space: normal;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all $tr-time $tr-type;
+    box-shadow: none;
+    color: map_get($button, main-color);
+    span{
+        border-bottom: none;
+    }
+    &:hover{
+        background-color: map_get($button, main-bg-hover);
+        color: map_get($button, main-color);
+    }
+    
+    &#{&}_d-block{
+        display: block;
+        width: 100%;
+    }
+    &#{&}_d-block-xs{
+        @include media('xs'){
+            display: block;
+            width: 100%;
+        }
+    }
+    &#{&}_lt{
+        background-color: transparent;
+        color: $c-dark;
+        border: 1px solid ;
+        &:hover {
+            background-color: gray;
+            color: white;
+        }
+    }
+    &#{&}_brd{
+        border: 2px solid map_get($button, main-bg);
+        &:hover {
+            border-color: map_get($button, main-bg-hover);
+        }
+    }
+    &#{&}_br{
+        border: 2px solid map_get($button, main-bg);
+        &, &:hover{
+            background-color: white;
+            color: map_get($button, main-bg);
+        }
+        &:hover{
+            border-color: map_get($button, bg-color);
+        }
+    }
+    &#{&}_clr {
+        padding: 0;
+        &:hover {
+            padding: 0;
+        }
+    }
+    &[disabled], &.disabled{
+        &, &:focus, &:hover, &:active{
+            background: map_get($button, disabled-bg);
+            color: map_get($button, disabled-color);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+    }
+    &[readonly], &.readonly{
+        &, &:focus, &:hover, &:active{
+            background: map_get($button, disalbed-bg);
+            color: map_get($button, disabled-color);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+    }
+    [type="file"]{
+        display: none;
+    }
+}

@@ -1,0 +1,103 @@
+//fist
+@import "varibles";
+@import "mixins";
+
+// vendors
+@import "_vendor/fonts/materialdesignicons.min.css";
+@import "_vendor/fonts/rouble-font.css";
+
+@import "_vendor/flex-grid";
+
+// default
+@import "starting";
+@import "layouts";
+
+// libs
+//@import "_vendor/";
+
+// forms & buttons
+@import "forms/btns";
+@import "forms/forms";
+@import "forms/checkbox";
+@import "forms/nx-dynamic-label";
+@import "forms/range-slider-box";
+
+// main
+@import "main/titles";
+@import "main/links";
+@import "main/content";
+@import "main/header";
+@import "main/menu";
+@import "main/footer";
+
+
+// blocks
+@import "nx-blocks/nx-section";
+@import "nx-blocks/nx-tabs";
+@import "nx-blocks/nx-breadcrumbs";
+@import "nx-blocks/nx-pagination";
+@import "nx-blocks/nx-actions";
+@import "nx-blocks/modals";
+@import "nx-blocks/nx-lang-toggle";
+@import "nx-blocks/nx-search-line";
+@import "nx-blocks/nx-share";
+@import "nx-blocks/nx-contacts";
+@import "nx-blocks/nx-socials";
+@import "nx-blocks/nx-form";
+@import "nx-blocks/nx-page-head";
+@import "nx-blocks/nx-attrs";
+@import "nx-blocks/nx-video";
+@import "nx-blocks/nx-subscribe";
+@import "nx-blocks/nx-mtoggle";
+@import "nx-blocks/nx-avatar";
+@import "nx-blocks/nx-preloader";
+@import "nx-blocks/nx-balloon";
+@import "nx-blocks/nx-counter";
+@import "nx-blocks/nx-informer";
+@import "nx-blocks/nx-rating";
+@import "nx-blocks/nx-articul";
+@import "nx-blocks/nx-product";
+@import "nx-blocks/nx-message";
+@import "nx-blocks/nx-tooltip";
+@import "nx-blocks/nx-password";
+@import "nx-blocks/nx-compare";
+@import "nx-blocks/nx-toggle-button";
+@import "nx-blocks/nx-popup";
+@import "blocks/search";
+
+// cart
+@import "nx-blocks/nx-cart/nx-cart-head";
+@import "nx-blocks/nx-cart/nx-cart-info";
+@import "nx-blocks/nx-cart/nx-cart-list";
+@import "nx-blocks/nx-cart/nx-ordered";
+@import "nx-blocks/nx-cart/nx-order-account";
+@import "nx-blocks/nx-cart/nx-cart-complects";
+@import "nx-blocks/nx-cart/nx-set-total";
+@import "nx-blocks/nx-cart/nx-pickup-info";
+@import "nx-blocks/nx-cart/nx-delivery-info";
+@import "nx-blocks/nx-cart/nx-cart-steps";
+@import "nx-blocks/nx-cart/nx-order-bill";
+@import "nx-blocks/nx-cart/nx-hcart";
+
+//filter
+@import "nx-blocks/nx-filter/nx-filter-nav";
+@import "nx-blocks/nx-filter/nx-filter-line";
+@import "nx-blocks/nx-filter/nx-filter";
+
+//order
+@import "nx-blocks/nx-order/nx-order";
+@import "nx-blocks/nx-order/nx-order-filter";
+@import "nx-blocks/nx-order/nx-order-head";
+@import "nx-blocks/nx-order/nx-order-link";
+@import "nx-blocks/nx-order/nx-order-total";
+
+//list elements
+@import "nx-blocks/nx-list-elements/nx-listing";
+@import "nx-blocks/nx-list-elements/nx-advans";
+@import "nx-blocks/nx-list-elements/nx-reviews";
+@import "nx-blocks/nx-list-elements/nx-partners";
+@import "nx-blocks/nx-list-elements/nx-reverse";
+@import "nx-blocks/nx-list-elements/nx-list-row";
+@import "nx-blocks/nx-list-elements/nx-affix-list";
+@import "nx-blocks/nx-list-elements/nx-files";
+

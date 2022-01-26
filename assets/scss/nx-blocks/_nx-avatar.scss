@@ -1,0 +1,26 @@
+.nx-avatar {
+    display: flex;
+    align-items: center;
+    
+    &__icon {
+        width: 60px;
+        height: 60px;
+        background-size: cover;
+        margin-right: 20px;
+        flex: none;
+    }
+    
+    &__title {
+        font-size: $fz-xmain;
+        margin-bottom: 3px;
+    }
+    
+    &__descr {
+        font-size: $fz-min;
+        color: rgba($c-dark, .5);
+    }
+    
+    @include media('xs') {
+        margin-bottom: 10px;
+    }
+}
