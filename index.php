@@ -61,14 +61,16 @@
                         class="rate__def">
                     <rare-area
                             v-bind:area="area"
+                            ref="rareArea"
                             @remove="removeArea"></rare-area>
                 </li>
             </ul>
             <template
                     v-if="areaList.length">
-                <div class="save-btn btn btn_lt">Сохранить изменения</div>
+                <div
+                    @click="isValid"
+                    class="save-btn btn btn_lt">Сохранить изменения</div>
             </template>
-
 
         </section>
     </div>
